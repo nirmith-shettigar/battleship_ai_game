@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battleship</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #1a1a1a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .game-container {
+            padding: 20px;
+            text-align: center;
+        }
+        .boards {
+            display: flex;
+            gap: 50px;
+            margin: 20px 0;
+        }
+        .board-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .board-title {
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            color: #ddd;
+        }
+        canvas {
+            background: #2a2a2a;
+            border-radius: 4px;
+        }
+        .message {
+            margin: 20px;
+            padding: 10px 20px;
+            background: #333;
+            border-radius: 4px;
+            font-size: 1.2em;
+        }
+        .controls {
+            margin-top: 10px;
+            color: #999;
+            font-size: 0.9em;
+        }
+        #restartButton {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #restartButton:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Battleship</h1>
+        <div class="boards">
+            <div class="board-container">
+                <div class="board-title">Your Fleet</div>
+                <canvas id="playerBoard"></canvas>
+                <div class="controls">Press SPACE to rotate ship</div>
+            </div>
+            <div class="board-container">
+                <div class="board-title">Enemy Waters</div>
+                <canvas id="aiBoard"></canvas>
+            </div>
+        </div>
+        <div class="message" id="message"></div>
+        <button id="restartButton">Play Again</button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
