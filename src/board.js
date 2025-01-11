@@ -1,4 +1,4 @@
-import { SIZE, CELL_SIZE, OCEAN, COLORS, HIT, FIRE, SHIP } from './constants.js';
+import { SIZE, CELL_SIZE, OCEAN, COLORS, HIT, FIRE } from './constants.js';
 
 export class Board {
     constructor(canvas, isPlayer = true) {
@@ -57,7 +57,7 @@ export class Board {
                 
                 // Only show cells for player's board or revealed shots on enemy board
                 if (this.isPlayer || (!this.isPlayer && (cell === HIT || cell === FIRE))) {
-                    const color = !reveal && cell === SHIP && !this.isPlayer ? COLORS[OCEAN] : COLORS[cell];
+                    const color = COLORS[cell];
                     
                     if (cell !== OCEAN) {
                         this.ctx.fillStyle = color;
